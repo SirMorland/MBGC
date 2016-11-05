@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxMBGC.MBGCController">
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar HBox.hgrow="ALWAYS">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="fileNewButton" mnemonicParsing="false" onAction="#onNew" text="New..." />
+                        <MenuItem fx:id="fileOpenButton" mnemonicParsing="false" onAction="#onOpen" text="Open..." />
+                        <MenuItem fx:id="fileSaveButton" mnemonicParsing="false" onAction="#onSave" text="Save" />
+                        <MenuItem fx:id="fileSaveAsButton" mnemonicParsing="false" onAction="#onSaveAs" text="Save as..." />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="editAddButton" mnemonicParsing="false" onAction="#onAdd" text="Add game..." />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="View">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Board Games">
+                           <graphic>
+                              <RadioButton fx:id="viewGamesButton" mnemonicParsing="false" onAction="#onGames" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Sleeves">
+                           <graphic>
+                              <RadioButton fx:id="viewSleevesButton" mnemonicParsing="false" onAction="#onSleeves" />
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="aboutHelpButton" mnemonicParsing="false" onAction="#onHelp" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField fx:id="search" onKeyReleased="#onSearch" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="footer" text="Total value: 50€&#9;Number of cards: 80&#9;Max players: 11" HBox.hgrow="ALWAYS" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="AddGameButton" mnemonicParsing="false" onAction="#onAdd" text="Add Game" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="games" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

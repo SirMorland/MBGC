@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxMBGC.EditorController">
+   <children>
+      <Region prefHeight="10.0" VBox.vgrow="NEVER" />
+      <HBox maxHeight="10.0" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="Name:" />
+                        <TextField fx:id="name" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="Age:" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="age" onKeyPressed="#onClick" prefWidth="50.0" HBox.hgrow="ALWAYS" />
+                        <Label text="Length:" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="length" onKeyPressed="#onClick" prefWidth="50.0" HBox.hgrow="ALWAYS" />
+                        <Label text="Players:" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="players" onKeyPressed="#onClick" prefWidth="50.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="Publisher:" />
+                        <TextField fx:id="publisher" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <Label text="Designer:" />
+                        <TextField fx:id="designer" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefWidth="100.0">
+               <children>
+                  <Region VBox.vgrow="ALWAYS" />
+                  <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER" />
+                  <Region VBox.vgrow="ALWAYS" />
+                  <Button fx:id="addImage" mnemonicParsing="false" onAction="#onAddImage" text="Add Image" VBox.vgrow="NEVER" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox maxHeight="10.0" spacing="10.0" VBox.vgrow="NEVER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Price:" />
+                  <TextField fx:id="price" onKeyPressed="#onClick" prefWidth="100.0" HBox.hgrow="NEVER" />
+                  <Label text="Bought from:" />
+                  <TextField fx:id="boughtFrom" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Theme:" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="theme" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Mechanics:" />
+                  <TextField fx:id="mechanics" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label text="Language:" />
+                  <TextField fx:id="language" onKeyPressed="#onClick" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox spacing="10.0" HBox.hgrow="SOMETIMES">
+               <children>
+                  <HBox spacing="5.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label text="Complexity:" />
+                        <ComboBox fx:id="complexity" promptText="Choose" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="5.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label text="Waiting time:" />
+                        <ComboBox fx:id="waitingTime" promptText="Choose" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <HBox spacing="5.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label text="Package size:" />
+                        <ComboBox fx:id="packageSize" promptText="Choose" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Region VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <VBox prefHeight="400.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Sleeves:" />
+                  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="sleeveAmounts" />
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="TOP_RIGHT" spacing="5.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onOk" text="Ok" />
+                        <Button mnemonicParsing="false" onAction="#onDelete" text="Delete" />
+                        <Button fx:id="errorClose" mnemonicParsing="false" onAction="#onClose" text="Cancel" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Region prefHeight="10.0" VBox.vgrow="NEVER" />
+   </children>
+</VBox>

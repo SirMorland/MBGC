@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxMBGC.ErrorController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@/pics/iconbig.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" text="My Board Game Collection" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="© Ville Kankaanpää 2016" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Button fx:id="errorClose" mnemonicParsing="false" onAction="#onClose" text="Close" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
